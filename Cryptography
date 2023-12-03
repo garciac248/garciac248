@@ -1,0 +1,58 @@
+//Cryptography 
+//By Carlos Garcia
+
+
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+void encrypt(string str)
+{
+	for (int i = 0; str[i] != str.empty(); i++)
+	{
+		str[i] = str[i] + 2;
+	}
+	cout << "Encrypted password:  "<<str;
+	cout << endl;
+}
+void decrypt(string str)
+{
+	for (int i = 0; str[i] != str.empty(); i++)
+	{
+		str[i] - 2;
+	}
+	cout << "Decrypted password: " << str;
+}
+int main()
+{
+	string username,password;
+	string option;
+
+	cout << "Create an account" << endl;
+
+	cout << "Username: ";
+	cin >> username;
+	cout << endl;
+
+	cout << "Password: ";
+	cin >> password;
+	cout << endl;
+
+
+	cout << "Will now encrypt password" << endl;
+	
+	encrypt(password);
+
+	cout << endl;
+
+	cout << "Decrypt password? (y/n)" << endl;
+	cin >> option;
+
+	if (option == "yes"||"y")
+	{
+		decrypt(password);
+	}
+	cout << endl;
+
+}
